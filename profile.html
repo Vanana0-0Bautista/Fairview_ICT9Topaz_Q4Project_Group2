@@ -20,12 +20,15 @@ body{
 }
 
 
-/* SIDEBAR */
 .sidebar{
    background: linear-gradient(#6ec1e4,#2aa3d6);
-   height: 100vh;
    text-align: center;
    padding: 20px;
+   min-height: 100vh;
+   height: 100%;
+   position: sticky;
+   top: 0;
+    box-shadow: #cf8585 0px 4px 8px;
 }
 
 
@@ -161,7 +164,7 @@ body{
 
 
 <div class="container-fluid">
-<div class="row">
+<div class="row min-vh-100">
 
 
 <!-- SIDEBAR -->
@@ -268,6 +271,10 @@ fileInput.addEventListener('change', function(event){
    }
 });
 </script>
+
+<footer class="text-center p-3" style=" font-family: Poppins, sans-serif; color: #903d3d;">
+    <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
+</footer>
 
 
 </body>
