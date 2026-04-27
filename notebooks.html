@@ -17,9 +17,12 @@ body{
 
 .sidebar{
    background: linear-gradient(#6ec1e4,#2aa3d6);
-   height: 100vh;
    text-align: center;
    padding: 20px;
+   min-height: 100vh;
+   height: 100%;
+   position: sticky;
+   top: 0;
    box-shadow: #cf8585 0px 4px 8px;
 }
 
@@ -39,20 +42,20 @@ body{
 .notebook{
     margin: 30px;
     padding: 20px;
-    border: 5px solid #f5b2bc;  
+    border: 5px solid #f19ac1;  
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
     min-height: 650px;
-    background: linear-gradient(to bottom, rgb(255, 188, 199), rgb(250, 212, 217));
+    background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
 }
 
 .main-content h1{
     font-family: 'Playfair Display', serif;
     color: #ffffff;
     padding: 20px;
-    background-color: #f8b6b6;
+    background-color: #f7bedb;
     display: inline-block;
-    border: 3px solid #ef9f9f;
+    border: 3px solid #ef95bf;
     border-radius: 25px;
     box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
 }
@@ -120,6 +123,55 @@ body{
     color: #903d3d;
 }
 
+.math1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+
+}
+
+.ict1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+    
+}
+
+.science1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+}
+
+.english1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+}
+
+.tle1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+}
+
+.social1 {
+    background-color: #f1b4c8;
+    border: 2px solid #9e9fed;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(235, 112, 112, 0.1);
+    padding: 10px;
+}
 
 
 
@@ -129,7 +181,7 @@ body{
 <body>
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row min-vh-100">
 
     
         <div class="col-md-3 sidebar">
@@ -162,27 +214,33 @@ body{
             <div class="row g-4">
 
             <div class="col-md-4">
-                <div class="Math container p-3">
+                <div class="Math container p-3 notebook-item">
+                    <div class="math1 container">
                     <h5 class="text-center mb-3">Math</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Mr. Jill Ramos</p>
                 </div>
             </div>
 
               <div class="col-md-4">
-                <div class="ICT container p-3">
+                <div class="ICT container p-3 notebook-item">
+                    <div class="ict1 container">
                     <h5 class="text-center mb-3">ICT</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Mr. Renn Santos</p>
                 </div>
             </div>
 
               <div class="col-md-4">
-                <div class="Science container p-3">
+                <div class="Science container p-3 notebook-item">
+                    <div class="science1 container">
                     <h5 class="text-center mb-3">Science</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Ms. Talavera</p>
                 </div>
@@ -193,27 +251,33 @@ body{
             <div class="row g-4">
 
             <div class="col-md-4">
-                <div class="English container p-3">
+                <div class="English container p-3 notebook-item">
+                    <div class="english1 container">
                     <h5 class="text-center mb-3">English</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Ms. Avilla</p>
                 </div>
             </div>
 
               <div class="col-md-4">
-                <div class="TLE container p-3">
+                <div class="TLE container p-3 notebook-item">
+                    <div class="tle1 container">
                     <h5 class="text-center mb-3">TLE</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Ms. Del Barrio</p>
                 </div>
             </div>
 
                 <div class="col-md-4">
-                <div class="SocialStudies container p-3">
+                <div class="SocialStudies container p-3 notebook-item">
+                    <div class="social1 container">
                     <h5 class="text-center mb-3">Social Studies</h5>
                     <h6 class="text-center mb-1">9-Topaz 2025-2026</h6>
+                    </div>
                     <hr>
                     <p style="text-align: center;">Mr. Reynoso</p>
                 </div>
@@ -230,6 +294,21 @@ body{
 
     </div>
 </div>
+
+<footer class="text-center p-3" style=" font-family: Poppins, sans-serif; color: #903d3d;">
+    <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
+</footer>
+
+
+
+<script>
+document.querySelectorAll(".notebook-item").forEach(item => {
+    item.addEventListener("click", function () {
+        alert("This notebook is not available yet, hehe.");
+    });
+});
+</script>
+
 
 </body>
 </html>
