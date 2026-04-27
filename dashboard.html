@@ -14,12 +14,15 @@ body{
 }
 
 
-/* SIDEBAR */
 .sidebar{
    background: linear-gradient(#6ec1e4,#2aa3d6);
-   height: 100vh;
    text-align: center;
    padding: 20px;
+   min-height: 100vh;
+   height: 100%;
+   position: sticky;
+   top: 0;
+   box-shadow: #cf8585 0px 4px 8px;
 }
 
 
@@ -33,17 +36,6 @@ body{
    font-size:18px;
    padding:12px;
    border-top:1px solid rgba(255,255,255,0.3);
-}
-
-
-/* ID CARD */
-.card-id{
-   background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
-   border-radius:25px;
-   padding:25px;
-   box-shadow:0 15px 30px rgba(0,0,0,0.3);
-   position:relative;
-   border:5px solid white;
 }
 
 
@@ -87,6 +79,42 @@ body{
    display:inline-block;
 }
 
+.main-content {
+    margin-left: 15px;
+    margin-top: 40px;
+    padding: 5px;
+    background-color:  #f7bedb;
+    display: inline-block;
+    border: 3px solid #ef95bf;
+    border-radius: 25px;
+    box-shadow: 3px 2px 5px rgba(142, 73, 73, 0.1);
+    
+}
+
+.curriculum{
+    margin: 30px;
+    padding: 20px;
+    border: 5px solid #f19ac1;  
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(198, 136, 145, 0.5);
+    min-height: 650px;
+    background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
+}
+
+.curriculum-text{
+    padding: 24px;
+    border: 3px solid #d76f93;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #1495cc;
+    text-align: center;
+    font-size: 18px;
+
+
+    
+}
+
+
     </style>
     
 </head>
@@ -94,7 +122,7 @@ body{
 
 
     <div class="container-fluid">
-    <div class="row">
+   <div class="row min-vh-100">
 
 
     <div class="col-md-3 sidebar">
@@ -112,6 +140,69 @@ body{
    <a class="nav-link" href="profile.html">PROFILE</a>
    <a class="nav-link" href="#">LOGOUT</a>
 
+
+</div>
+
+ <div class="col-md-9">
+
+    <div class="notebook">
+        <div class="main-content">
+            <div class="titus text-light p-3 rounded-5">
+                <h1 style="font-family: 'Playfair Display', serif;">Dashboard</h1>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <h1 style="text-align: center; font-family: 'Playfair Display', serif; color: #ffffff;">
+            Information and Communications Technology
+        </h1>
+
+       
+        <div class="d-flex justify-content-center mt-4">
+
+        <div class="curriculum w-75">
+
+    <div class="curriculum-text">
+
+        <h3 style="text-align:center; font-family:'Playfair Display', serif; color:#2aa3d6; font-size: 30px;">
+            ICT Curriculum
+        </h3>
+
+        <br>
+
+        <b>1st Quarter</b><br>
+        - Intro to HTML<br>
+        - Basic CSS Styling<br>
+        - Quarter Project<br><br>
+
+        <b>2nd Quarter</b><br>
+        - Intro to Bootstrap<br>
+        - Bootstrap with Forms<br>
+        - Quarter Project<br><br>
+
+        <b>3rd Quarter</b><br>
+        - Intro to JavaScript<br>
+        - Data types, variables, operators<br>
+        - Functions and events<br>
+        - Quarter Project<br><br>
+
+        <b>4th Quarter</b><br>
+        - Conditional Statements<br>
+        - Iteration Statements<br>
+        - Quarter Project<br>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <footer class="text-center p-3 " style=" font-family: Poppins, sans-serif; color: #903d3d; margin-left: 45px;">
+    <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
+</footer>
 
 </div>
 
