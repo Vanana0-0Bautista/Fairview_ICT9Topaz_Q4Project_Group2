@@ -27,21 +27,21 @@
         content: "";
         position: absolute;
         inset: 0;
-
-
         background: linear-gradient(
             rgba(255, 200, 230, 0.5),
             rgba(200, 220, 255, 0.5)
         );
-
-
         backdrop-filter: blur(3px);
         z-index: 0;
     }
 
     .login-wrapper{
-       margin-left: 15px;
-       margin-top: 75px;
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
     }
 
     .logo{
@@ -59,35 +59,26 @@
 
     .back-logo{
         position: absolute;
-
-        top: 20px; /* move it higher */
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
-
         width: 240px;
-
         opacity: 0.9;
-
-        z-index: 1; /* stays behind RH logo */
-
+        z-index: 1;
         filter: drop-shadow(0 8px 15px rgba(255, 200, 100, 0.5));
     }
 
     .card{
         position: relative;
         z-index: 1;
-
         width: 400px;
         padding: 30px;
         border-radius: 30px;
-
         background: rgba(255, 180, 220, 0.85);
         border: 4px solid #ffd48e;
-
         box-shadow:
             0 0 20px rgba(255, 180, 220, 0.6),
             0 10px 30px rgba(0,0,0,0.2);
-
         text-align: center;
         margin-top: 60px;
     }
@@ -97,13 +88,9 @@
         font-family: 'Playfair Display', serif;
         font-size: 2.5rem;
         color: white;
-
-
         text-shadow:
             0 0 10px #ffb6e6,
             0 0 20px #ffd6f5;
-
-
         margin-bottom: 10px;
     }
 
@@ -129,8 +116,6 @@
         border-radius: 15px;
         border: none;
         margin-top: 5px;
-
-
         background: rgba(255,255,255,0.8);  
     }
 
@@ -139,36 +124,35 @@
         width: 100%;
         margin-top: 15px;
         padding: 10px;
-
-
         border: none;
         border-radius: 20px;
-
-
         background: linear-gradient(135deg, #6ee7df, #7dd3fc);
         color: white;
         font-weight: 600;
-
-
         box-shadow: 0 0 10px rgba(125, 211, 252, 0.8);
-
-
         transition: 0.3s;
     }
 
-
     button:hover{
+        transform: scale(1.05);
+    }
+
+    .cancel-btn{
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(5px);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        box-shadow: none;
+    }
+
+    .cancel-btn:hover{
+        background: rgba(255, 255, 255, 0.4);
         transform: scale(1.05);
     }
 
     #result{
         margin-top: 10px;
         font-size: 0.9rem;
-    }
-
-    .form-check{
-        text-align: left;
-        margin-top: 10px;
     }
    
     details{
@@ -202,59 +186,85 @@
     </details>
     </header>
 
-   <form>
-    <label>Username:</label>
-    <input type="text" id="uname" class="form-control text-center" placeholder="Enter here" required>
-    <br>
-    <label>Password:</label>
-    <input type="password" id="pwd" class="form-control text-center" placeholder="Enter here" required>
-    <br>
-    <input type="button" id="loginBTN" value="Login" class="btn btn-info rounded-5" onclick="authenticate()">
-    <input type="reset" id="cancel" value="Cancel" class="btn btn-info rounded-5">
-  </form>
+    <form onsubmit="login(event)" novalidate>
+
+        <label>
+            Username
+            <input type="text" id="username" placeholder="Username" required>
+        </label>
+
+        <label>
+            Password
+            <input type="password" id="password" placeholder="Min. 6 characters" required>
+        </label>
+
+        <div id="result"></div>
+        <div style="display: flex; gap: 10px;">
+            <button type="submit" class="btn" id="loginBtn">Login</button>
+            <button type="reset" class="btn cancel-btn">Cancel</button>
+        </div>
+
+        <div class="form-check mt-3 d-flex justify-content-center align-items-center gap-2">
+            <input type="checkbox" id="loggedin" class="form-check-input">
+            <label for="loggedin" class="form-check-label mb-0">Stay Logged In</label>
+        </div>
+
+    </form>
 </div>
 </div>
 
 
 <script>
-   let attempt_counter = 0
-        function authenticate(){
-            let username = document.getElementById("uname").value;
-            let pwd = document.getElementById("pwd").value;
-            let granted = "Welcome " + username + "!";
-            let denied = "Access denied. Account locked after 3 attempts!";
+    // correct login details
+    let correctUsername = "Sukunas#1fan";
+    let correctPassword = "123456";
 
+    // attempt counter
+    let attempts = 0;
 
-            while (attempt_counter < 3) {
-            if (username === "123" && pwd === "321") {
-                alert(granted);
-                window.location.href = "dashboard.html";
+    function login(event) {
+        event.preventDefault();
 
+        // get input values
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        let result = document.getElementById("result");
 
-                break; // stop loop
+        // check empty fields
+        if (user === "" || pass === "") {
+            alert("Please fill in all fields!");
+            result.innerHTML = "⚠️ Missing input";
+            return;
+        }
+
+        // correct login
+        if (user === correctUsername && pass === correctPassword) {
+            result.innerHTML = "✅ Access Granted";
+            alert("Welcome, " + user + "!");
+
+            attempts = 0;
+
+            // redirect
+            window.location.href = "notebooks.html";
+        }
+
+        // wrong login
+        else {
+            attempts++;
+
+            result.innerHTML = "❌ Incorrect username/password. Attempt " + attempts + " of 3.";
+            alert("Invalid username or password!");
+
+            // lock after 3 tries
+            if (attempts >= 3) {
+                alert("Too many failed attempts!");
+
+                document.getElementById("loginBtn").disabled = true;
+                result.innerHTML = "🚫 Locked after 3 attempts";
             }
-
-
-            else {
-            attempt_counter++;
-            document.getElementById("display").innerHTML =
-                "Incorrect username and/or password. Attempt " + attempt_counter + " of 3 ";
-            break; // stop loop for this click
         }
     }
 
-
-    if (attempt_counter >= 3) {
-        alert(denied);
-        document.getElementById("loginBTN").disabled = true;
-    }
-}
-    </script>
+</script>
 </body>
 </html>
-
-
-
-
-
-
