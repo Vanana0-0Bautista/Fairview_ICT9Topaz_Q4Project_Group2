@@ -8,11 +8,29 @@
 
     <style>
         
-body{
-   background: #eac4cf;
+body {
+   margin: 0;
    font-family: 'Poppins', sans-serif;
+   background-image: url(https://i.ytimg.com/vi/3djEcYkdalk/maxresdefault.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   position: relative;
 }
 
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(255, 200, 230, 0.35),
+        rgba(200, 220, 255, 0.35)
+    );
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
 
 .sidebar{
    background: linear-gradient(#6ec1e4,#2aa3d6);
@@ -91,6 +109,27 @@ body{
     
 }
 
+.calendar-box {
+    margin: 30px;
+    padding: 20px;
+    border: 5px solid #f19ac1;
+    border-radius: 20px;
+     background-color:  #f7bedb;
+    box-shadow: 0 0 15px rgba(198, 136, 145, 0.5);
+
+
+}
+
+.calendar-text {
+    padding: 24px;
+    border: 3px solid #d76f93;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+
 .curriculum{
     margin: 30px;
     padding: 20px;
@@ -98,7 +137,7 @@ body{
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(198, 136, 145, 0.5);
     min-height: 650px;
-    background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
+    background:  #f7bedb;
 }
 
 .curriculum-text{
@@ -106,7 +145,7 @@ body{
     border: 3px solid #d76f93;
     border-radius: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #1495cc;
+    color: hsl(0, 0%, 95%);
     text-align: center;
     font-size: 18px;
 
@@ -138,7 +177,7 @@ body{
    <a class="nav-link" href="notebooks.html">NOTEBOOKS</a>
    <a class="nav-link" href="tasks.html">TASKS</a>
    <a class="nav-link" href="profile.html">PROFILE</a>
-   <a class="nav-link" href="#">LOGOUT</a>
+   <a class="nav-link" href="logout.html">LOGOUT</a>
 
 
 </div>
@@ -152,53 +191,63 @@ body{
             </div>
         </div>
 
+  
+
         <br><br><br>
 
-        <h1 style="text-align: center; font-family: 'Playfair Display', serif; color: #ffffff;">
-            Information and Communications Technology
-        </h1>
 
-       
-        <div class="d-flex justify-content-center mt-4">
+  <div class="row mt-4">
 
-        <div class="curriculum w-75">
+    <div class="col-md-8">
+        <div class="curriculum">
+            <div class="curriculum-text">
 
-    <div class="curriculum-text">
+                <h3 style="text-align:center; font-family:'Playfair Display', serif;  color: #d85e93;; font-size: 30px;">
+                    ICT Curriculum
+                </h3>
 
-        <h3 style="text-align:center; font-family:'Playfair Display', serif; color:#2aa3d6; font-size: 30px;">
-            ICT Curriculum
-        </h3>
+                <br>
 
-        <br>
+                <b>1st Quarter</b><br>
+                - Intro to HTML<br>
+                - Basic CSS Styling<br>
+                - Quarter Project<br><br>
 
-        <b>1st Quarter</b><br>
-        - Intro to HTML<br>
-        - Basic CSS Styling<br>
-        - Quarter Project<br><br>
+                <b>2nd Quarter</b><br>
+                - Intro to Bootstrap<br>
+                - Bootstrap with Forms<br>
+                - Quarter Project<br><br>
 
-        <b>2nd Quarter</b><br>
-        - Intro to Bootstrap<br>
-        - Bootstrap with Forms<br>
-        - Quarter Project<br><br>
+                <b>3rd Quarter</b><br>
+                - Intro to JavaScript<br>
+                - Data types, variables, operators<br>
+                - Functions and events<br>
+                - Quarter Project<br><br>
 
-        <b>3rd Quarter</b><br>
-        - Intro to JavaScript<br>
-        - Data types, variables, operators<br>
-        - Functions and events<br>
-        - Quarter Project<br><br>
+                <b>4th Quarter</b><br>
+                - Conditional Statements<br>
+                - Iteration Statements<br>
+                - Quarter Project<br>
 
-        <b>4th Quarter</b><br>
-        - Conditional Statements<br>
-        - Iteration Statements<br>
-        - Quarter Project<br>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-md-4">
+        <div class="calendar-box">
+            <div class="calendar-text">
+            <h3 style="font-family: 'Playfair Display', serif;  color: hsl(0, 0%, 95%);;text-align: center;">Calendar</h3>
+
+            <div class="calendar-content" style="margin-top: 20px;">
+                <p style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  color: hsl(0, 0%, 95%); font-size: 16px;">
+                    No upcoming events.
+                </p>
+                </div>
+                </div>
+        </div>
     </div>
 
 </div>
-
-        </div>
-
-    </div>
 
     <footer class="text-center p-3 " style=" font-family: Poppins, sans-serif; color: #903d3d; margin-left: 45px;">
     <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
