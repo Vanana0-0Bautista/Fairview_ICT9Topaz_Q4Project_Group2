@@ -3,39 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royale High ID</title>
-
+<title>Profile</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-<!-- FANCY FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
 
-
 <style>
-body{
-   background: #eac4cf;
+
+/* BACKGROUND (same as dashboard) */
+body {
+   margin: 0;
    font-family: 'Poppins', sans-serif;
+   background-image: url(https://i.pinimg.com/736x/80/0b/06/800b06da4c31607fa3dc6700629df9b3.jpg);
+   background-size: cover;
+   background-position: center;
+   min-height: 100vh;
+   position: relative;
+   display: flex;
+   flex-direction: column;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(255, 200, 230, 0.35),
+        rgba(200, 220, 255, 0.35)
+    );
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
 
+/* SIDEBAR */
 .sidebar{
    background: linear-gradient(#6ec1e4,#2aa3d6);
    text-align: center;
    padding: 20px;
    min-height: 100vh;
-   height: 100%;
    position: sticky;
    top: 0;
-    box-shadow: #cf8585 0px 4px 8px;
+   box-shadow: #cf8585 0px 4px 8px;
 }
-
 
 .logo img{
    width:120px;
 }
-
 
 .nav-link{
    color:white;
@@ -44,138 +58,86 @@ body{
    border-top:1px solid rgba(255,255,255,0.3);
 }
 
-
-/* ID CARD */
-.card-id{
-   background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
-   border-radius:25px;
-   padding:25px;
-   box-shadow:0 15px 30px rgba(0,0,0,0.3);
-   position:relative;
-   border:5px solid white;
-}
-
-
-/* HEADER */
-.header{
-   display:flex;
-   align-items:center;
-   justify-content:space-between;
-}
-
-
-.header img{
-   height:60px;
-}
-
-
-.title{
+/* PAGE TITLE */
+.page-title{
    font-family:'Great Vibes',cursive;
-   font-size:40px;
+   font-size:45px;
    color:white;
    text-shadow:2px 2px 10px #ff69b4;
-}
-
-
-/* LACE LINE */
-.lace{
-   height:15px;
-   background:url('https://png.pngtree.com/png-clipart/20221009/original/pngtree-white-lace-border-png-image_8674976.png');
-   background-size:contain;
-}
-
-
-/* LABEL */
-.label{
-   background:#ff6fa5;
-   color:white;
-   padding:5px 15px;
-   border-radius:20px;
-   font-size:13px;
-   display:inline-block;
-}
-
-
-/* INPUT STYLE */
-.input-box{
-   background:#e0f7ff;
-   height:35px;
-   border-radius:20px;
-   margin-bottom:15px;
-   border:2px solid #bdefff;
-}
-
-
-/* DIAMOND */
-.diamond{
-   width:90px;
-}
-
-
-/* HEART FRAME */
-.heart-frame{
-   width:170px;
-   height:170px;
-   border:6px solid gold;
-   border-radius:50%;
-   overflow:hidden;
-   background:white;
-   margin:auto;
-}
-
-
-.heart-frame img{
-   width:100%;
-   height:100%;
-   object-fit:cover;
-}
-
-
-/* ID NUMBER */
-.id-number{
-   background:#ff6fa5;
-   color:white;
    text-align:center;
-   padding:10px;
-   border-radius:15px;
-   font-weight:bold;
-   margin-top:20px;
-   font-size:18px;
+   margin-bottom:30px;
 }
 
-
-/* SPARKLE EFFECT */
-.card-id::after{
-   content:"";
-   position:absolute;
-   top:0;
-   left:0;
-   width:100%;
-   height:100%;
-   background: url('https://www.transparenttextures.com/patterns/stardust.png');
-   opacity:0.3;
-   pointer-events:none;
+/* CARD STYLE (dashboard style) */
+.profile-card{
+    background: #f7bedb;
+    border: 4px solid #ffd48e;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(198, 136, 145, 0.5);
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: #903d3d;
 }
+
+/* INNER BOX */
+.inner-box{
+    padding:20px;
+    border: 4px solid #ffd48e;
+    border-radius: 15px;
+    text-align:center;
+}
+
+/* PROFILE IMAGE */
+.Sam {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border: 4px solid #ffd48e;
+}
+
+/* BUTTON */
+.btn-custom{
+    background:#ff6fa5;
+    color:white;
+    border:none;
+    border-radius:20px;
+    padding:8px 15px;
+}
+
+.btn-custom:hover{
+    background:#ff4d94;
+}
+
+/* TEXT */
+.label{
+    color:gray;
+    font-size:14px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    color:#903d3d;
+    margin-top:30px;
+}
+
 </style>
 </head>
 
-
 <body>
-
 
 <div class="container-fluid">
 <div class="row min-vh-100">
 
-
 <!-- SIDEBAR -->
 <div class="col-md-3 sidebar">
-
 
    <div class="logo">
        <img src="https://static.wikia.nocookie.net/logopedia/images/9/9e/Royale_High_2018.png/revision/latest/scale-to-width-down/200?cb=20230624134118">
    </div>
 
-    <br>
+   <br>
 
    <a class="nav-link" href="dashboard.html">DASHBOARD</a>
    <a class="nav-link" href="notebooks.html">NOTEBOOKS</a>
@@ -183,100 +145,84 @@ body{
    <a class="nav-link" href="profile.html">PROFILE</a>
    <a class="nav-link" href="index.html">LOGOUT</a>
 
-
 </div>
-
 
 <!-- MAIN -->
-<div class="col-md-9 d-flex justify-content-center align-items-center">
+<div class="col-md-9 d-flex flex-column align-items-center mt-5">
 
+    <h1 class="page-title">Profile </h1>
 
-<div class="card-id col-md-8">
+    <div class="row w-100 px-4 g-4">
 
+        <!-- INFO -->
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="inner-box">
 
-   <!-- HEADER -->
-   <div class="header">
-       <img src="https://static.wikia.nocookie.net/logopedia/images/8/8b/Royale_High_2023.png/revision/latest/scale-to-width-down/300?cb=20230624134302">
-       <div class="title">Student ID Card</div>
-   </div>
+                    <h3>Student Information</h3>
 
+                    <p class="label">Student ID</p>
+                    <p>SN654321</p>
 
-   <div class="lace my-2"></div>
+                    <p class="label">Contact Number</p>
+                    <p>+639100000015</p>
 
+                    <p class="label">Email</p>
+                    <p>randomemail@gmail.com</p>
 
-   <div class="row mt-3">
+                    <button class="btn-custom mt-2" onclick="hubert()">Change Password</button>
 
+                </div>
+            </div>
+        </div>
 
-       <!-- LEFT -->
-       <div class="col-md-7">
+        <!-- PICTURE -->
+        <div class="col-md-6">
+            <div class="profile-card">
+                <div class="inner-box">
 
+                    <h3>Profile Picture</h3>
 
-           <div class="label">Student Name</div>
-           <div class="input-box"></div>
+                    <img id="preview" class="Sam" src="default.jpg">
 
+                    <br><br>
 
-           <div class="label">Grade Level</div>
-           <div class="input-box"></div>
+                    <input type="file" id="fileInput" class="form-control">
 
+                </div>
+            </div>
+        </div>
 
-           <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" class="diamond">
+    </div>
 
+    <footer class="text-center p-3" style=" font-family: Poppins, sans-serif; color: #903d3d;">
+    <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
+</footer>
 
-       </div>
-
-
-       <!-- RIGHT -->
-       <div class="col-md-5 text-center">
-
-
-           <div class="heart-frame">
-               <img id="preview" src="default.jpg">
-           </div>
-
-
-           <br>
-           <input type="file" id="fileInput" accept="image/*">
-
-
-       </div>
-
-
-   </div>
-
-
-   <div class="id-number">ID No. SN654321</div>
-
+</div>
 
 </div>
 </div>
-
-
-</div>
-</div>
-
 
 <script>
 const fileInput = document.getElementById('fileInput');
 const preview = document.getElementById('preview');
 
-
-fileInput.addEventListener('change', function(event){
-   const file = event.target.files[0];
-   if(file){
-       const reader = new FileReader();
-       reader.onload = function(e){
-           preview.src = e.target.result;
-       };
-       reader.readAsDataURL(file);
-   }
+fileInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      preview.src = e.target.result; 
+    };
+    reader.readAsDataURL(file);
+  }
 });
+
+function hubert(){
+  alert("Time before changing current password: 67 years");
+}
 </script>
-
-<footer class="text-center p-3" style=" font-family: Poppins, sans-serif; color: #903d3d;">
-    <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
-</footer>
-
 
 </body>
 </html>
-
