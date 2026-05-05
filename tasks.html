@@ -1,127 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
 
-    <style>
-        
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
+
+
+<style>
+
+
 body{
-   background: #eac4cf;
-   font-family: 'Poppins', sans-serif;
+   background: url('https://i.pinimg.com/736x/80/0b/06/800b06da4c31607fa3dc6700629df9b3.jpg');
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   font-family: 'Quicksand', sans-serif;
 }
 
 
+
+
 .sidebar{
-   background: linear-gradient(#6ec1e4,#2aa3d6);
-   text-align: center;
-   padding: 20px;
-   min-height: 100vh;
-   height: 100%;
-   position: sticky;
-   top: 0;
-    box-shadow: #cf8585 0px 4px 8px;
+  background: #2aa3d6;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  box-shadow: #a3d5ff 0px 4px 8px;
 }
 
 
 .logo img{
-   width:120px;
+  width:120px;
 }
 
 
 .nav-link{
-   color:white;
-   font-size:18px;
-   padding:12px;
-   border-top:1px solid rgba(255,255,255,0.3);
+  color:white;
+  font-size:18px;
+  padding:12px;
+  border-top:1px solid rgba(255,255,255,0.3);
 }
 
 
-/* ID CARD */
-.card-id{
-   background: linear-gradient(180deg,#ff9ecb,#ffd9f2);
-   border-radius:25px;
-   padding:25px;
-   box-shadow:0 15px 30px rgba(0,0,0,0.3);
-   position:relative;
-   border:5px solid white;
+.header-box{
+   background:linear-gradient( #74b2f6,#fcb7f6);
+   border-radius: 20px;
+   padding: 20px;
+   margin-bottom: 20px;
+
+
+   border: 3px solid #d5b13b;
+   outline: 3px solid #ffffff;
+
+
+   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 
-/* HEADER */
-.header{
-   display:flex;
-   align-items:center;
-   justify-content:space-between;
-}
-
-
-.header img{
-   height:60px;
-}
-
-
-.title{
+.header-box h1{
    font-family:'Great Vibes',cursive;
-   font-size:40px;
-   color:white;
-   text-shadow:2px 2px 10px #ff69b4;
+   color: #ffffff;
 }
 
 
-/* LACE LINE */
-.lace{
-   height:15px;
-   background:url('https://png.pngtree.com/png-clipart/20221009/original/pngtree-white-lace-border-png-image_8674976.png');
-   background-size:contain;
+
+
+.section-title{
+   font-family: 'Playfair Display', serif;
+   color: #1f4f99;
+   margin-bottom: 10px;
 }
 
 
-/* LABEL */
+
+
+.task-card{
+   background: #ffffff;
+   border-radius: 20px;
+   padding: 15px;
+
+
+   border: 3px solid #eeb3d0;
+   outline: 3px solid #fff0f6;
+
+
+   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+
+
+   transition: 0.2s;
+}
+
+
+.task-card:hover{
+   transform: scale(1.03);
+}
+
+
+
+
 .label{
-   background:#ff6fa5;
-   color:white;
-   padding:5px 15px;
-   border-radius:20px;
-   font-size:13px;
-   display:inline-block;
+   background: #ff94c8;
+   color: white;
+   padding: 4px 12px;
+   border-radius: 12px;
+   font-size: 11px;
+   display: inline-block;
+   margin-bottom: 8px;
 }
 
-    </style>
-    
+
+
+
+.btn-custom{
+   background: #3399ff;
+   color: white;
+   border-radius: 15px;
+   border: 2px solid white;
+   padding: 6px 14px;
+}
+
+
+.btn-custom:hover{
+   background: #1f7fe0;
+}
+
+
+
+
+.footer{
+   text-align: center;
+   margin-top: 20px;
+   color: #1f4f99;
+}
+
+
+</style>
 </head>
+
+
 <body>
 
 
-    <div class="container-fluid">
-    <div class="row min-vh-100">
+<div class="container-fluid">
+<div class="row min-vh-100">
 
 
-    <div class="col-md-3 sidebar">
+<!-- SIDEBAR -->
+<div class="col-md-3 sidebar">
 
 
-   <div class="logo">
-       <img src="https://static.wikia.nocookie.net/logopedia/images/9/9e/Royale_High_2018.png/revision/latest/scale-to-width-down/200?cb=20230624134118">
-   </div>
+  <div class="logo">
+      <img src="https://static.wikia.nocookie.net/logopedia/images/9/9e/Royale_High_2018.png">
+  </div>
 
-    <br>
 
-   <a class="nav-link" href="dashboard.html">DASHBOARD</a>
-   <a class="nav-link" href="notebooks.html">NOTEBOOKS</a>
-   <a class="nav-link" href="tasks.html">TASKS</a>
-   <a class="nav-link" href="profile.html">PROFILE</a>
-   <a class="nav-link" href="#">LOGOUT</a>
+  <br>
+
+
+  <a class="nav-link" href="dashboard.html">DASHBOARD</a>
+  <a class="nav-link" href="notebooks.html">NOTEBOOKS</a>
+  <a class="nav-link" href="tasks.html">TASKS</a>
+  <a class="nav-link" href="profile.html">PROFILE</a>
+  <a class="nav-link" href="index.html">LOGOUT</a>
+</div>
+
+
+
+
+<div class="col-md-9 p-4">
+
+
+<div class="header-box">
+   <h1>Your Study Tracker</h1>
+</div>
+
+
+<div class="row g-3">
+
+
+<div class="col-md-6">
+<div class="task-card text-center">
+<span class="label">NEW</span>
+<h5><b>Finish Notes</b></h5>
+<p>Complete your notebook</p>
+<button class="btn-custom" onclick="startTask()">Start</button>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="task-card text-center">
+<span class="label">DAILY</span>
+<h5>Review Lesson</h5>
+<p>Go over today's topic</p>
+<button class="btn-custom" onclick="startTask()">Start</button>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="task-card text-center">
+<span class="label">IMPORTANT</span>
+<h5>Do Assignment</h5>
+<p>Finish your homework</p>
+<button class="btn-custom" onclick="startTask()">Start</button>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="task-card text-center">
+<span class="label">BONUS</span>
+<h5>Help a Classmate</h5>
+<p>Assist someone in need</p>
+<button class="btn-custom" onclick="startTask()">Start</button>
+</div>
+</div>
 
 
 </div>
+
+
+</div>
+</div>
+</div>
+
 
 <footer class="text-center p-3" style=" font-family: Poppins, sans-serif; color: #903d3d;">
     <p>&copy; 2026 Fairview ICT9 Topaz. All rights reserved. Bautista, Lacuesta, Lorenzo.</p>
 </footer>
 
 
-    
+<script>
+function startTask(){
+   alert("Task started!");
+}
+</script>
+
+
 </body>
 </html>
+
